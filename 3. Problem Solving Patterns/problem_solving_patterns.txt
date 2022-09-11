@@ -1,0 +1,11 @@
+SOME Problem Solving Patterns...
+Frequency Counter
+Multiple Pointers
+Sliding Window
+Divide and Conquer
+Dynamic Programming
+Greedy Algorithms
+Backtracking
+Many more!
+
+Visit: https://cs.slides.com/colt_steele/problem-solving-patterns
