@@ -30,3 +30,5 @@ function validAnagram(str1, str2) {
 let result = validAnagram("anagram", "nagaram");
 
 console.log(result); // true
+
+// Complexity of this problem O(n)
