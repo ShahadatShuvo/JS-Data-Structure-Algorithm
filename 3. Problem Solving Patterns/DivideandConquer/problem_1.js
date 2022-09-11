@@ -41,4 +41,4 @@ const res = search([1, 2, 3, 4, 5, 6], 4);
 
 console.log(res);
 
-// Time Complexity - Log(N) - Binary Search!
+// Time Complexity - Log(N) - Binary Search! follows divide and conquer pattern
