@@ -55,3 +55,5 @@ function same(arr1, arr2) {
 let output = same([0, 2, 3, 2, 4], [0, 4, 4, 16, 9]);
 
 console.log(output);
+
+// Note: Complexity of this solution is O(n)

@@ -31,4 +31,4 @@ let result = validAnagram("anagram", "nagaram");
 
 console.log(result); // true
 
-// Complexity of this problem O(n)
+// Complexity of this solution is O(n)
