@@ -1,0 +1,5 @@
+What is recursion?
+A process (a function in our case) that calls itself
+
+
+Slide: https://cs.slides.com/colt_steele/searching-algorithms-22
