@@ -10,5 +10,5 @@ function power(base, exponent) {
   // return 5*5*5*1
 }
 
-let res = power(5, 3);
+let res = power(2, 4);
 console.log(res);
