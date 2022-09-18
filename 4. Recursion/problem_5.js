@@ -9,13 +9,14 @@ function collectOddValues(arr) {
     newArr.push(arr[0]);
   }
 
-  // [21, 5, 47, 9, 3].concat(collectOddValues([]));
-  // [21, 5, 47, 9, 3].concat(collectOddValues([]));
-  // [21, 5, 47, 9].concat(collectOddValues([3]));
-  // [21, 5, 47].concat(collectOddValues([9, 3]));
-  // [21, 5].concat(collectOddValues([47, 9, 3]));
-  // [21].concat(collectOddValues([5, 47, 9, 3]));
   // [21].concat(collectOddValues([8, 5, 47, 9, 3]));
+  // [21].concat(collectOddValues([5, 47, 9, 3]));
+  // [21, 5].concat(collectOddValues([47, 9, 3]));
+  // [21, 5, 47].concat(collectOddValues([9, 3]));
+  // [21, 5, 47, 9].concat(collectOddValues([3]));
+  // [21, 5, 47, 9, 3].concat(collectOddValues([]));
+
+  // Result== [21, 5, 47, 9, 3].concat(collectOddValues([]));
 
   newArr = newArr.concat(collectOddValues(arr.slice(1)));
   console.log(newArr);
