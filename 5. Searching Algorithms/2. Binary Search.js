@@ -50,3 +50,6 @@ let res = binarySearch(
   95
 );
 console.log(res);
+
+// Time Complexity: Binary Serach:
+// Worst and Average Case = O(logn)   Best case O(1)
