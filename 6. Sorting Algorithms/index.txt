@@ -1,6 +1,7 @@
 Resource: https://cs.slides.com/colt_steele/elementary-sorting-algorithms
 
 Resourse visualization: https://visualgo.net/en/sorting?slide=1
+Resourse visualization: https://visualgo.net/en
 
 
 ## What is sorting?
