@@ -18,10 +18,17 @@
 // Input: nums = [3,3], target = 6
 // Output: [0,1]
 
-function twoSum(nums, target) {
-  let mainArr = [...nums];
-  nums.sort((a, b) => a - b); // O(N)
-  console.log(nums);
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function (nums, target) {
+  let mainArr = [];
+  for (let i = 0; i < nums.length; i++) {
+    mainArr.push(nums[i]);
+  }
+  nums.sort((a, b) => a - b);
   let left = 0;
   let right = nums.length - 1;
   while (left <= right) {
@@ -33,15 +40,9 @@ function twoSum(nums, target) {
       break;
     }
   }
-  let num1 = nums[left];
-  let num2 = nums[right];
-  console.log(num1, num2);
-  let res1 = mainArr.indexOf(num1);
-  mainArr[res1] = undefined;
-  let res2 = mainArr.indexOf(num2);
-  console.log(res1, res2);
-  return [res1, res2];
-}
-
-let res = twoSum([3, 3], 6);
-console.log(res);
+  let res = [];
+  res[0] = mainArr.indexOf(nums[left]);
+  mainArr[res[0]] = undefined;
+  res[1] = mainArr.indexOf(nums[right]);
+  return res;
+};

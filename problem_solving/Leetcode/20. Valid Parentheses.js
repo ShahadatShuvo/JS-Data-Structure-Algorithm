@@ -1,3 +1,7 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
 var isValid = function (s) {
   if (s.length % 2 !== 0) return false;
   let arr = s.split("");
@@ -48,6 +52,3 @@ var isValid = function (s) {
   }
   return true;
 };
-
-let res = isValid("(){}}{");
-console.log(res);

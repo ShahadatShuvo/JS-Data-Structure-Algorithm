@@ -27,6 +27,10 @@
 // let str = "flight";
 // console.log(str.slice(0, temp.length));
 
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
 var longestCommonPrefix = function (strs) {
   let smallest = strs[0];
   for (let i = 0; i < strs.length; i++) {
@@ -45,6 +49,3 @@ var longestCommonPrefix = function (strs) {
   if (smallest.length === 0) return "";
   return smallest;
 };
-
-let res = longestCommonPrefix(["reflower", "flow", "flight"]);
-console.log(res);
