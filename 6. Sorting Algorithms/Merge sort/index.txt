@@ -1,0 +1,8 @@
+FASTER SORTS
+There is a family of sorting algorithms that can improve time complexity from O(n  ) to O(n log n)
+There's a tradeoff between efficiency and simplicity
+The more efficient algorithms are much less simple, and generally take longer to understand
+Let's dive in!
+
+
+Resource: https://cs.slides.com/colt_steele/intermediate-sorting-algorithms#/4/0/1
