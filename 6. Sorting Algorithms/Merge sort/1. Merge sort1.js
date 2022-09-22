@@ -3,7 +3,7 @@
 // Exploits the fact that arrays of 0 or 1 element are always sorted
 // Works by decomposing an array into smaller arrays of 0 or 1 elements, then building up a newly sorted array
 
-function mergeTwoSortedArray(arr1, arr2) {
+function merge(arr1, arr2) {
   let sortedArr = [];
   let i = 0;
   let j = 0;
@@ -27,5 +27,16 @@ function mergeTwoSortedArray(arr1, arr2) {
   return sortedArr;
 }
 
-let res = mergeTwoSortedArray([1, 3, 5, 7, 9], [2, 4, 6, 8, 10]);
+function mergeSort(arr) {
+  if (arr.length <= 1) return arr;
+
+  let mid = Math.floor(arr.length / 2);
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
+  console.log(left);
+  console.log(right);
+  return merge(left, right);
+}
+
+let res = mergeSort([1, 3, 5, 7, 9, 2, 4, 6, 8, 10]);
 console.log(res);
