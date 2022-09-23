@@ -78,6 +78,20 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+  // The get() method returns the value of the specific index
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+
+    let counter = 0;
+    let current = this.head;
+
+    while (counter !== index) {
+      current = current.next;
+      console.log(current);
+      counter++;
+    }
+    return current.val;
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -103,3 +117,4 @@ console.log(list.shift());
 list.unshift(40);
 console.log(list.unshift(50));
 console.log(list.unshift(60));
+console.log(list.get(2));
