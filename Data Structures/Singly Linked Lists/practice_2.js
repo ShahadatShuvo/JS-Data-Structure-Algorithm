@@ -78,7 +78,7 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
-  // The get() method returns the value of the specific index
+  // The get(index) method returns the node of the specific index
   get(index) {
     if (index < 0 || index >= this.length) return null;
 
@@ -90,7 +90,14 @@ class SinglyLinkedList {
       console.log(current);
       counter++;
     }
-    return current.val;
+    return current;
+  }
+  // The set() method receives two value set(index, value) and changes the previous value of that indexed position with the given value. after successfully done, it return true, otherwise false.
+  set(index, val) {
+    let getNode = this.get(index);
+    getNode.val = val;
+    console.log(getNode);
+    return this;
   }
 }
 
@@ -117,4 +124,5 @@ console.log(list.shift());
 list.unshift(40);
 console.log(list.unshift(50));
 console.log(list.unshift(60));
-console.log(list.get(2));
+console.log(list.get(2).val);
+console.log(list.set(2, 90));
