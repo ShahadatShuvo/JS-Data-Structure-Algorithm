@@ -1,0 +1,8 @@
+1. Data Structures?
+Data structures are collections of values, the relationships among them, and the functions or operations that can be applied to the data
+
+2. What is a class?
+A blueprint for creating objects with pre-defined properties and methods
+
+Why do we need to learn this?
+We're going to implement data structures as classes!
