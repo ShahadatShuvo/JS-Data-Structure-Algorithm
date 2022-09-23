@@ -95,9 +95,12 @@ class SinglyLinkedList {
   // The set() method receives two value set(index, value) and changes the previous value of that indexed position with the given value. after successfully done, it return true, otherwise false.
   set(index, val) {
     let getNode = this.get(index);
-    getNode.val = val;
+    if (getNode) {
+      getNode.val = val;
+      return true;
+    }
     console.log(getNode);
-    return this;
+    return false;
   }
 }
 
