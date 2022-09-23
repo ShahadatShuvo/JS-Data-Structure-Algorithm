@@ -11,6 +11,7 @@ class SinglyLinkedList {
     this.tail = null;
     this.length = 0;
   }
+  //The push() method inserts a node from the last into linked list
   push(val) {
     let newNode = new Node(val);
     if (!this.head) {
@@ -30,7 +31,7 @@ class SinglyLinkedList {
       current = current.next;
     }
   }
-
+  //The shift() method removes the last node from linked list
   pop() {
     if (this.length === 0) return undefined;
 
@@ -50,7 +51,7 @@ class SinglyLinkedList {
     }
     return current;
   }
-
+  //The shift() method removes the first node from linked list
   shift() {
     if (!this.head) return undefined;
 
