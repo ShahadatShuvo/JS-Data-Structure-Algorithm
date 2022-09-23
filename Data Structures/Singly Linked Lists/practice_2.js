@@ -65,6 +65,7 @@ class SinglyLinkedList {
     console.log(this.head);
     return currentHead;
   }
+  //The unshift() method inserts new node from the beggining on the list
   unshift(val) {
     let newNode = new Node(val);
     if (!this.head) {
