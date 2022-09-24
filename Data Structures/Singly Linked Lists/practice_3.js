@@ -105,7 +105,35 @@ class SinglyLinkedList {
   }
 
   // set(): Changing the value of a node based on it's position in the Linked List
-  set(pos, val) {}
+  set(pos, val) {
+    let searchedNode = this.get(pos);
+    searchedNode.val = val;
+    return this;
+  }
+
+  // insert(): Adding a node to the Linked List at a specific position
+  insert(pos, val) {
+    if (pos < 1) return undefined;
+
+    let newNode = new Node(val);
+    let searchedNode = this.get(pos);
+    console.log(newNode);
+    console.log(searchedNode);
+    if (pos === 1) {
+      newNode.next = searchedNode;
+      this.head = newNode;
+    } else if (pos > this.length) {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    } else {
+      let prevNode = this.get(pos - 1);
+      prevNode.next = newNode;
+      newNode.next = searchedNode;
+    }
+    this.length++;
+    console.log(this);
+    return this;
+  }
 }
 
 // let first = new Node("Hi");
@@ -135,3 +163,16 @@ list.unshift(30);
 console.log(list);
 
 console.log(list.get(1));
+
+console.log(list.set(3, 200));
+console.log(list);
+
+// console.log(list.insert(2, 15));
+console.log(list.insert(8, 400));
+console.log(list.insert(9, 600));
+console.log(list.insert(10, 800));
+console.log(list.insert(3, 900));
+console.log(list.insert(1, 1000));
+console.log(list.length);
+
+console.log(list.traverse());
