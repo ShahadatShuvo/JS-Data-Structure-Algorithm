@@ -106,6 +106,8 @@ class SinglyLinkedList {
 
   // set(): Changing the value of a node based on it's position in the Linked List
   set(pos, val) {
+    if (pos < 1 || pos > this.length) return null;
+
     let searchedNode = this.get(pos);
     searchedNode.val = val;
     return this;
@@ -154,6 +156,29 @@ class SinglyLinkedList {
 
     return this;
   }
+
+  // reverse(): Reversing the Linked List in place!
+  reverse() {
+    if (this.length === 0) return undefined;
+
+    if (this.length === 1) return this;
+    // this.tail.val = this.head.val;
+    let newTail = new Node(this.head.val);
+    this.tail.next = newTail;
+    this.tail = newTail;
+    let current = this.head.next;
+    let temp = this.tail;
+    let i = this.length;
+    while (i > 1) {
+      let newNode = new Node(current.val);
+      newNode.next = temp;
+      temp = newNode;
+      current = current.next;
+      i--;
+    }
+    this.head = temp;
+    return this;
+  }
 }
 
 // let first = new Node("Hi");
@@ -169,40 +194,46 @@ let list = new SinglyLinkedList();
 console.log(list);
 list.push(10);
 list.push(20);
+list.push(30);
+list.push(40);
 // list.push(30);
-console.log(list);
+// console.log(list);
+
+// console.log(list.traverse());
+// // console.log(list.pop());
+
+// console.log(list.shift());
+
+// list.unshift(50);
+// list.unshift(40);
+// list.unshift(30);
+// console.log(list);
+
+// console.log(list.get(1));
+
+// console.log(list.set(3, 200));
+// console.log(list);
+
+// // console.log(list.insert(2, 15));
+// console.log(list.insert(8, 400));
+// console.log(list.insert(9, 600));
+// console.log(list.insert(10, 800));
+// console.log(list.insert(3, 900));
+// console.log(list.insert(1, 1000));
+// console.log(list.length);
+
+// console.log(list.traverse());
+
+// console.log(list.remove(9));
+
+// console.log(list);
+
+// console.log(list.traverse());
+
+// console.log(list.remove(4));
 
 console.log(list.traverse());
-// console.log(list.pop());
 
-console.log(list.shift());
-
-list.unshift(50);
-list.unshift(40);
-list.unshift(30);
-console.log(list);
-
-console.log(list.get(1));
-
-console.log(list.set(3, 200));
-console.log(list);
-
-// console.log(list.insert(2, 15));
-console.log(list.insert(8, 400));
-console.log(list.insert(9, 600));
-console.log(list.insert(10, 800));
-console.log(list.insert(3, 900));
-console.log(list.insert(1, 1000));
-console.log(list.length);
-
-console.log(list.traverse());
-
-console.log(list.remove(9));
-
-console.log(list);
-
-console.log(list.traverse());
-
-console.log(list.remove(4));
+console.log(list.reverse());
 
 console.log(list.traverse());
