@@ -134,6 +134,26 @@ class SinglyLinkedList {
     console.log(this);
     return this;
   }
+
+  // remove(): Removing a node from the Linked List at a specific position
+  remove(pos) {
+    if (pos < 1 || pos > this.length) return undefined;
+
+    let searchedNode = this.get(pos);
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else if (this.length === pos) {
+      let prevNode = this.get(pos - 1);
+      this.next = prevNode;
+    } else {
+      let prevNode = this.get(pos - 1);
+      prevNode.next = searchedNode.next;
+    }
+    this.length--;
+
+    return this;
+  }
 }
 
 // let first = new Node("Hi");
@@ -174,5 +194,15 @@ console.log(list.insert(10, 800));
 console.log(list.insert(3, 900));
 console.log(list.insert(1, 1000));
 console.log(list.length);
+
+console.log(list.traverse());
+
+console.log(list.remove(9));
+
+console.log(list);
+
+console.log(list.traverse());
+
+console.log(list.remove(4));
 
 console.log(list.traverse());
