@@ -179,6 +179,41 @@ class SinglyLinkedList {
     this.head = temp;
     return this;
   }
+  // sort(): Sorting the Linked List in Assending order!
+  sort() {
+    if (this.length === 0) return undefined;
+
+    if (this.length === 1) return this;
+
+    let newHead;
+    let newTail;
+    let current = this.head;
+    for (let i = 0; i < this.length; i++) {
+      let checkedNode = current.next;
+      for (let j = i + 1; j < this.length; j++) {
+        if (current.val > checkedNode.val) {
+          let temp = current.val;
+          current.val = checkedNode.val;
+          checkedNode.val = temp;
+        }
+        checkedNode = checkedNode.next;
+      }
+      let newNode = new Node(current.val);
+      newNode.next = current.next;
+
+      if (i == 0) {
+        newHead = newNode;
+        newTail = newNode;
+      } else {
+        newTail.next = newNode;
+        newTail = newNode;
+      }
+      current = current.next;
+    }
+    this.head = newHead;
+    this.tail = newTail;
+    return this;
+  }
 }
 
 // let first = new Node("Hi");
@@ -235,5 +270,8 @@ list.push(40);
 console.log(list.traverse());
 
 console.log(list.reverse());
+
+console.log(list.traverse());
+console.log(list.sort());
 
 console.log(list.traverse());
