@@ -69,6 +69,34 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+
+    console.log(Math.floor(this.length - 1 / 2));
+    if (index <= Math.floor((this.length - 1) / 2)) {
+      let current = this.head;
+      for (let i = 0; i < Math.floor(this.length - 1 / 2); i++) {
+        current = current.next;
+        console.log(current);
+        if (i === index) {
+          console.log(i, index, current);
+          return current;
+          break;
+        }
+      }
+    } else {
+      let current = this.tail;
+      for (let i = this.length - 1; i >= Math.floor(this.length - 1 / 2); i--) {
+        current = current.prev;
+        console.log(current);
+        if (i === index) {
+          return current;
+          break;
+        }
+      }
+    }
+  }
 }
 
 let list = new DoublyLinkedList();
@@ -88,3 +116,10 @@ console.log(list.shift());
 console.log(list);
 
 console.log(list.unshift(80));
+console.log(list.unshift(70));
+console.log(list.unshift(60));
+console.log(list.unshift(50));
+
+console.log(list.get(2));
+
+console.log(list.get(4));
