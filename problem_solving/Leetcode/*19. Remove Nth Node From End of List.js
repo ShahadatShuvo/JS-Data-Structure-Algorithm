@@ -47,26 +47,28 @@ list.push(1);
 // list.push(6);
 
 var removeNthFromEnd = function (head, n) {
+  if (!head) return null;
+  if (!head.next && n === 1) return null;
   let len = 0;
   let current = head;
   while (current.next) {
     len++;
     current = current.next;
   }
-  if (len <= 0) {
-    head.val = undefined;
-    head.next = undefined;
-  } else {
-    let queryIndex = len - n;
-    let currentPrev = head;
-    let currentNext = head.next;
-    while (queryIndex) {
-      currentPrev = currentNext;
-      currentNext = currentNext.next;
-      queryIndex--;
-    }
-    currentPrev.next = currentNext.next;
+  if (len === n - 1) {
+    head = head.next;
+    return head;
   }
+
+  let queryIndex = len - n;
+  let currentPrev = head;
+  let currentNext = head.next;
+  while (queryIndex) {
+    currentPrev = currentNext;
+    currentNext = currentNext.next;
+    queryIndex--;
+  }
+  currentPrev.next = currentNext.next;
   return head;
 };
 let res = removeNthFromEnd(list.head, 1);
