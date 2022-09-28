@@ -50,3 +50,4 @@ queue.enqueue(30);
 console.log(queue);
 
 console.log(queue.dequque());
+code
