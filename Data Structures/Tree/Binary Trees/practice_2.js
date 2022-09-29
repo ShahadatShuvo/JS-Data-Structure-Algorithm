@@ -1,3 +1,5 @@
+// Finding a Node in BST
+
 class Node {
   constructor(val) {
     this.val = val;
@@ -48,7 +50,17 @@ class BinarySearchTree {
         if (val > current.val) {
           if (current.right) {
             current = current.right;
+          } else {
+            return undefined;
           }
+        } else if (val < current.val) {
+          if (current.left) {
+            current = current.left;
+          } else {
+            return undefined;
+          }
+        } else {
+          return current;
         }
       }
     }
@@ -67,3 +79,7 @@ tree.insert(7);
 console.log(tree);
 
 console.log(tree.find(10));
+console.log(tree.find(30));
+console.log(tree.find(20));
+console.log(tree.find(15));
+console.log(tree.find(8));
