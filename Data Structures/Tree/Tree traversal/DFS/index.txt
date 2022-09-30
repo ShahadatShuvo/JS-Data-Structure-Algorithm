@@ -1,0 +1,42 @@
+DFS: Depth First Search
+    Pre-Order traversal:
+        In this way, at first we visit the root node. Then we will traverse the left sub tree with pre-order way. After that, we will traverse the right sub-tree in that way.
+
+                                    B 
+                                A       C 
+        in pre-order method, first we visit root B, then left A, then right C. (B, A, C)
+
+                                    2
+                            7               9
+                        1       6               8
+                            5       10      3       4
+        in pre-order method, first we visit root 2, after that, in left sub-tree new root is 7, then left node of 7 is 1, then right node of 7 is 6, again left node of 6 is 5, then right node of 6 is 10. after traversing the left sub-tree. then the right-eub-tree ...
+        using this method output will be,   2, 7, 1, 6, 5, 10, 9, 8, 3, 4.
+
+    Post-order traversal: 
+        In this way, at first we traverse the left sub-tree. Then we traverse the right sub-tree. At last, we will visit the root node.
+
+                                    B 
+                                A       C   
+        in post-order method, first we visit left node A, then right node C, finally root node B. (A, C, B)
+
+                                    2
+                            7               9
+                        1       6               8
+                            5       10      3       4
+        in post-order method, at first we traverse left sub-tree, the root node of left sub-tree is 7. here we will get 1, then we go right of 7, new node is 6. the left node of 8 is 5, the right node of 8 is 10, then the root node will print 6, and so on..... 
+        using this method output will be,   1, 5, 10, 6, 7, 3, 4, 8, 9, 2.
+
+    In-order traversal: 
+        In this way, at first we traverse the left sub-tree. Then we visit the root node. After thet, we will visit the right sub-tree.
+
+                                    B 
+                                A       C   
+        in post-order method, first we visit left node A, then root node B, finally right node C. (A, B, C)
+
+                                    2
+                            7               9
+                        1       6               8
+                            5       10      3       4
+        
+        using this method output will be,   1, 7, 5, 6, 10, 2, 9, 3, 8, 4.
