@@ -15,7 +15,7 @@ class BinartTree {
   constructor() {
     this.root = null;
   }
-  insertion(val) {
+  insert(val) {
     let newNode = new Node(val);
     if (!this.root) {
       this.root = newNode;
@@ -43,15 +43,39 @@ class BinartTree {
       }
     }
   }
+  find(val) {
+    let current = this.root;
+    while (current) {
+      if (val === current.val) {
+        return current;
+      } else if (val > current.val) {
+        if (current.right) {
+          current = current.right;
+        } else {
+          return null;
+        }
+      } else {
+        if (current.left) {
+          current = current.left;
+        } else {
+          return null;
+        }
+      }
+    }
+  }
 }
 
 let tree = new BinartTree();
 
 console.log(tree);
-tree.insertion(10);
-tree.insertion(8);
-tree.insertion(20);
-tree.insertion(30);
-tree.insertion(18);
+tree.insert(10);
+tree.insert(8);
+tree.insert(20);
+tree.insert(30);
+tree.insert(18);
 
 console.log(tree);
+
+console.log(tree.find(20));
+console.log(tree.find(18));
+console.log(tree.find(19));
