@@ -19,21 +19,24 @@ class BinartTree {
     let newNode = new Node(val);
     if (!this.root) {
       this.root = newNode;
+      return this;
     } else {
       let current = this.root;
       while (current) {
         if (val > current.val) {
           if (current.right) {
             current = current.right;
+          } else {
+            current.right = newNode;
+            return this;
           }
-          current.right = newNode;
-          return this;
         } else if (val < current.val) {
           if (current.left) {
             current = current.left;
+          } else {
+            current.left = newNode;
+            return this;
           }
-          current.left = newNode;
-          return this;
         } else {
           return undefined;
         }
