@@ -4,7 +4,6 @@ var divideArray = function (nums) {
   for (let i = 0; i < nums.length; i++) {
     frequencyObj[nums[i]] = (frequencyObj[nums[i]] || 0) + 1;
   }
-  console.log(frequencyObj);
   let temp = 1;
   for (key in frequencyObj) {
     if (frequencyObj[key] % 2 !== 0) {
