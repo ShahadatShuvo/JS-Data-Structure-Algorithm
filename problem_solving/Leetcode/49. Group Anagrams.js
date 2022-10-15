@@ -40,5 +40,5 @@ var groupAnagrams = function (strs) {
   return resultArr;
 };
 
-let res = groupAnagrams(["a"]);
+let res = groupAnagrams(["no", "on", "ten", "ent"]);
 console.log(res);
