@@ -25,6 +25,7 @@ var threeSum = function (nums) {
         mid = start + 1;
       }
     }
+    //hello
     if (tempArr.length === 3) {
       arr.push(tempArr);
     }
