@@ -36,3 +36,14 @@ var threeSum = function (nums) {
 
 let res = threeSum([1, 2, -2, -1]);
 console.log(res);
+
+let arr = ["geeksforgeeks", "geeks", "geek", "geezer"]; // gee
+
+// Minimum distance between the two words
+
+// let strArr = ["the", "quick", "brown", "fox", "quick", "fox"];
+
+// let w1 = "the";
+// let w2 = "fox"; // output: 3
+
+let arrNum = [2 * 2, 2 * 3, 2 * 2 * 2, 2 * 5]; // GCD , 2
